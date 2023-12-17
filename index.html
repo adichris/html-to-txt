@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML TO TEXT</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h2 class="text-center text-primary"> HTML file to TEXT file</h2>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-lg-6">
+                <form action="" method="get" class="bg-light rounded p-3">
+                    <div class="">
+                        <label for="htmlfile" class="form-label" >Upload Html File</label>
+                        <input type="file" class="form-control" name="htmlfile" id="htmlfile" title="Upload HTML file">
+                    </div>
+                    <div class="progress my-3">
+                        <div class="progress-bar" role="progressbar" id="progressbar" aria-valuemin="0" aria-valuemax="100">0</div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 d-flex flex-column gap-4 bg-light rounded p-3">
+                <div class="">
+                    <textarea class="form-control" name="textContent" id="textContent" cols="30" rows="10"></textarea>
+                </div>
+                <p class="lead mb-0 pb-0">Download Text As</p>
+                <div class="input-group">
+                    <input type="text" onchange="setDownloadAsText()" name="filename" id="filename" class="form-control w-75" placeholder="Save As" value="text_content">
+                    <select type="text" onchange="setDownloadAsText()" id="extension" name="extension" value=".txt" class="form-control w-25"> 
+                        <option value=".txt">Text (.txt)</option>
+                        <option value=".md">Markdown (.md)</option>
+                        </select>
+                </div>
+                <button class="btn btn-success" type="button" id="downloadTextFile">Download <span id="downloadAs">Text</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="engine.js"></script>
+</body>
+</html>
